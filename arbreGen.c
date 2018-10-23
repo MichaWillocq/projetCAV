@@ -20,30 +20,30 @@ FILE* save(char* filename, FILE* f); // ECRIT DANS LE FICHIER L'ARBRE STOCKÉ EN
 FILE* view(FILE* f); // AFFICHE L'ARBRE STOCKÉ EN MÉMOIRE
 void exit(); // QUITTE LE PROGRAMME
 
-new(prenom)
+void new(prenom);
 
-pere(char* prenom);
-mere(char* prenom);
-parents(char* prenom);
+char* pere(char* prenom);
+char* mere(char* prenom);
+char* parents(char* prenom);
 
-gdperes(char* prenom);
-gdmeres(char* prenom);
-gdparents(char* prenom);
-ascendants(char* prenom);
+char* gdperes(char* prenom);
+char* gdmeres(char* prenom);
+char* gdparents(char* prenom);
+char* ascendants(char* prenom);
 
-enfants(char* prenom);
-petitsenfants(char* prenom);
-descendants(char* prenom);
+char* enfants(char* prenom);
+char* petitsenfants(char* prenom);
+char* descendants(char* prenom);
 
-partenaires(char* prenom);
-freres(char* prenom);
-soeurs(char* prenom);
-demifreres(char* prenom);
-demisoeurs(char* prenom);
+char* partenaires(char* prenom);
+char* freres(char* prenom);
+char* soeurs(char* prenom);
+char* demifreres(char* prenom);
+char* demisoeurs(char* prenom);
 
-oncles(char* prenom);
-tantes(char* prenom);
-cousins(char* prenom);
+char* oncles(char* prenom);
+char* tantes(char* prenom);
+char* cousins(char* prenom);
 
 
 int main(){
