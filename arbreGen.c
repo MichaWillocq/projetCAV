@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#define MAX 100
 
 
 typedef struct _personne{
@@ -10,17 +11,29 @@ typedef struct _personne{
     struct _person* mere;
 } Personne;
 
-typedef struct _lc {
-    Person* racine;
-    struct _lc* suivant;
-} ListeCh;
-
 FILE* load(char* filename, FILE* f); // CHARGE EN MÉMOIRE L'ARBRE STOCKÉ DANS LE FICHIER
 FILE* save(char* filename, FILE* f); // ECRIT DANS LE FICHIER L'ARBRE STOCKÉ EN MÉMOIRE
 FILE* view(FILE* f); // AFFICHE L'ARBRE STOCKÉ EN MÉMOIRE
 void exit(); // QUITTE LE PROGRAMME
 
-void new(prenom);
+void affichePersonne(Personne p){
+    printf("%s:%c,%s,%s", p.prenom, p.sexe, (p.pere)->prenom, (p.mere)->prenom);
+}
+
+int hash(char* prenom) {
+    int id=0;
+    for(;*prenom;prenom++)
+        id+=*prenom;
+    return id%MAX;
+}
+
+void new(char* prenom, char sexe, char* pere, char* mere){
+    Personne p;
+    strcpy(p.prenom, prenom);
+    p.sexe = sexe;
+
+
+}
 
 char* pere(char* prenom);
 char* mere(char* prenom);
