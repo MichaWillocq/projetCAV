@@ -10,7 +10,7 @@ typedef struct _personne{
     struct _person* mere;
 } Personne;
 
-typedef _lc {
+typedef struct _lc {
     Person* racine;
     struct _lc* suivant;
 } ListeCh;
