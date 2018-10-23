@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-
+#define MAX 100
 
 typedef struct _personne{
     char* prenom;
@@ -14,6 +14,19 @@ typedef struct _lc {
     Person* racine;
     struct _lc* suivant;
 } ListeCh;
+
+/////////////Structures / Fonctions prénoms
+typedef struct _prenoms {
+	char** prenoms;
+	int taille;
+} Prenoms;
+
+char** init_tab_prenoms(); //Initialise le tableau
+void ajout_prenom(char* prenom, Prenoms prenoms); //Ajoute un prénom dans le tableau(reste trié dans l'ordre alphabétique)
+int prenom_existe(Prenoms prenoms); //vérifie si un prénom existe
+void supprime_prenom(char* prenom, Prenoms prenoms); //Supprime un prénom si il existe (c'est toujours utile)
+
+/////////////
 
 FILE* load(char* filename, FILE* f); // CHARGE EN MÉMOIRE L'ARBRE STOCKÉ DANS LE FICHIER
 FILE* save(char* filename, FILE* f); // ECRIT DANS LE FICHIER L'ARBRE STOCKÉ EN MÉMOIRE
